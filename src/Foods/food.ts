@@ -1,7 +1,20 @@
-export const foods = [
+interface Food {
+    id: number;
+    name: string;
+    Tags: string[];
+    image: string;
+    description: string;
+    ingredients: string[];
+    Steps: { name: string; process: string }[];
+    Tip: string;
+    Credits: { name: string; link: string }[];
+}
+
+export const foods: Food[] = [
     {
         id: 1,
         name: "Dubai Chocolate",
+        Tags: ["Middle-Eastern", "Dessert", "Chocolate"],
         image: "https://i.pinimg.com/736x/a4/49/24/a449247c61c897c8c4cf23e12e6a1ee2.jpg",
         description: "Dubai Chocolate is  a crispy, cheesy Middle Eastern dessert that’s sweet, nutty, and super satisfying. You take shredded phyllo dough, mix it with butter so it gets all golden and crunchy, then stuff it with a mix of tahini and soft cheese. After baking, it’s soaked in a sweet syrup with a hint of rose or orange blossom water. Top it off with pistachios—it’s crunchy, creamy, and just melts in your mouth..",
         ingredients: [
@@ -593,6 +606,7 @@ export const foods = [
         ]
     },
     {
+        id: 14,
         name: "Churros",
         Tags: ["Mexican", "Dessert", "Sweet", "Fried"],
         image: "https://i0.wp.com/chasety.com/wp-content/uploads/2023/12/realchasecurtis_Churros_with_Chocolate_Dipping_Sauce_sitting_on_f2b58bf9-b01f-4159-b4d8-5a4040906a60.png?w=768&ssl=1",
@@ -631,7 +645,7 @@ export const foods = [
         ]
     },
     {
-        id: 14,
+        id: 15,
         name: "Baklava",
         Tags: ["Middle-Eastern", "Dessert", "Sweet", "Pastry"],
         image: "https://recipestime.com/wp-content/uploads/2025/01/sunrise0173_2._A_tray_of_pistachio_baklava_with_golden_flaky__76e99147-b7fc-4d6c-86f4-824459c907d5_0.webp",
@@ -670,7 +684,7 @@ export const foods = [
         ]
     },
     {
-        id: 15,
+        id: 16,
         name: "Gulab Jamun",
         Tags: ["Indian", "Dessert", "Sweet", "Milk-based"],
         image: "https://www.munatycooking.com/wp-content/uploads/2020/10/Bread-Gulab-Jamun-Recipe-3.jpg",
@@ -711,7 +725,7 @@ export const foods = [
         ]
     },
     {
-        id: 16,
+        id: 17,
         name: "Ratatouille",
         Tags: ["French", "Vegetarian", "Vegan", "Stew"],
         image: "https://www.vibrantplate.com/wp-content/uploads/2022/07/Homemade-Classic-French-Ratatouille-02-1200x1800.jpg.webp",
@@ -751,7 +765,7 @@ export const foods = [
         ]
     },
     {
-        id: 17,
+        id: 18,
         name: "Vegetable Samosas",
         Tags: ["Indian", "Snack", "Vegetarian"],
         image: "https://www.cubesnjuliennes.com/wp-content/uploads/2020/08/Best-Indian-Punjabi-Samosa-1.jpg",
@@ -787,7 +801,7 @@ export const foods = [
         ]
     },
     {
-        id: 18,
+        id: 19,
         name: "Bibimbap",
         Tags: ["Korean", "Non-veg", "Rice"],
         image: "https://www.recipetineats.com/tachyon/2019/05/Bibimbap_3.jpg?resize=900%2C1260&zoom=0.72",
@@ -830,6 +844,7 @@ export const foods = [
         ]
     },
     {
+        id: 20,
         name: "Ceviche",
         Tags: ["Latin-American", "Seafood", "Gluten-free"],
         image: "https://www.cucinabyelena.com/wp-content/uploads/2024/05/Easy-Shrimp-Ceviche-Recipe-So-Fresh-8-1-scaled.jpg",
@@ -862,7 +877,7 @@ export const foods = [
         ]
     },
     {
-        id: 19,
+        id: 21,
         name: "Paella (Seafood)",
         Tags: ["Spanish", "Seafood", "Rice"],
         image: "https://recipesvibrant.com/wp-content/uploads/2024/08/9296e7be-b4a4-4c20-8a48-c1ba4de000ce.png.webp",
@@ -906,9 +921,10 @@ export const foods = [
         ]
     },
     {
+        id: 22,
         name: "Piri Piri Chicken",
         Tags: ["Portuguese", "African", "Chicken", "Spicy"],
-        image: "",
+        image: "https://www.simplyrecipes.com/thmb/qLrk78uP7jjl8AMxa-3NOViKbqw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Piri-Piri-Roasted-Chicken-LEAD-02-cf14e7c991194b7cb616949554618d81.jpg",
         description: "Piri Piri Chicken is a Portuguese-African grilled chicken dish. Chicken is marinated in a spicy chili (piri piri) and citrus marinade, then grilled.",
         ingredients: [
             "1 whole chicken (spatchcocked) or 4 chicken legs",
@@ -942,7 +958,7 @@ export const foods = [
         ]
     },
     {
-        id: 20,
+        id: 23,
         name: "Chicken Enchiladas",
         Tags: ["Mexican", "Chicken", "Bake"],
         image: "https://insanelygoodrecipes.com/wp-content/uploads/2024/05/Chicken-Enchiladas-2.jpg",
@@ -983,7 +999,7 @@ export const foods = [
         ]
     },
     {
-        id: 21,
+        id: 24,
         name: "Greek Salad",
         Tags: ["Greek", "Vegetarian", "Salad", "Mediterranean"],
         image: "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/08/Greek-Salad-6-1.jpg",
@@ -1027,7 +1043,7 @@ export const foods = [
         ]
     },
     {
-        id: 22,
+        id: 25,
         name: "Kung Pao Chicken",
         Tags: ["Chinese", "Stir-fry", "Spicy", "Chicken"],
         image: "https://www.oliveandmango.com/images/uploads/2020_04_27_takeout_style_kung_pao_chicken_2.jpg",
@@ -1075,4 +1091,49 @@ export const foods = [
     
    
 
+]
+
+
+export const regions = [
+  { name: "Indian",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   },
+  { name: "Italian",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   },
+  { name: "Jamaican",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   },
+  { name: "Caribbean",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   },
+  { name: "African",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   },
+  { name: "Middle-Eastern",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   },
+  { name: "Thai",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   },
+  { name: "Mexican",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   },
+  { name: "Mediterranean",
+    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+   }
+]
+
+export const filterTags = [
+  "Non-veg",
+  "Vegetarian",
+  "Chicken",
+  "Vegan",
+  "Sweet",
+  "Snack",
+  "Fried",
+  "Curry",
+  "Pasta",
+  "Rice",
+  "Spicy",
 ]
