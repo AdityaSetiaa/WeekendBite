@@ -8,10 +8,17 @@ function Header() {
       <div className='w-full h-27 border-2 border-gray-300 bg-white shadow-md flex items-center justify-between px-4'>
         <img src={week} alt="Recefied Logo" className='h-32 flex flex-col justify-center items-center' />
       </div>
-      <div className='flex w-full h-auto bg-white  rounded-2xl shadow-md flex flex-row items-center justify-between p-4 overflow-x-auto whitespace-nowrap gap-4'>
+      <div className=' w-full h-auto bg-white  rounded-2xl shadow-md flex flex-row items-center justify-between p-4 overflow- whitespace-nowrap gap-4 scroller-hide '>
         {
           regions.regions.map((region: any, index: number) => (
-            <div key={index} className='flex w-fit items-center flex-row justify-between  px-4 py-2 border-b rounded-2xl gap-3 border-gray-200 border-2 hover:bg-gray-100 hover:border-red-400 cursor-pointer'>
+            <div key={index} className='flex
+                                        flex-row
+                                        w-full 
+                                        items-center
+                                        gap-2 
+                                        gap-x-2
+                                        justify-center
+                                        text-gray-700'>
               <img src={region.img} alt="" className='w-12 h-12 rounded-full object-cover' />
               <span className='text-lg font-semibold flex'>{region.name}</span>
               
@@ -19,6 +26,25 @@ function Header() {
           ))
         }
       </div>
+      <div className='w-full h-auto  flex flex-row items-center  p-2 overflow- whitespace-nowrap gap-4 scroller-hide justify-center '>
+        {
+          regions.filterTags.map((tags: any, index: number) => (
+            <div key={index} className='flex 
+                                        flex-row
+                                        items-center
+                                        rounded-2xl
+                                        p-2
+                                        cursor-default
+                                        justify-center
+                                        text-gray-700'>
+              
+              |<span className='w-auto rounded-2xl p-2 hover:text-red-400'>{tags}</span> | 
+            </div>
+          ))
+        }
+      </div>
+      
+      <input type="text" />
       
     </div>
   )

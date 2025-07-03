@@ -1099,28 +1099,28 @@ export const regions = [
     img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
    },
   { name: "Italian",
-    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+    img: "https://images.pexels.com/photos/1487511/pexels-photo-1487511.jpeg"
    },
   { name: "Jamaican",
-    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+    img: "https://static01.nyt.com/images/2024/07/02/multimedia/Jerk-Chickenrex-gkmz/Jerk-Chickenrex-gkmz-mediumSquareAt3X.jpg"
    },
-  { name: "Caribbean",
-    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+  { name: "Chinese",
+    img: "https://www.oliveandmango.com/images/uploads/2020_04_27_takeout_style_kung_pao_chicken_2.jpg"
    },
-  { name: "African",
-    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+  { name: "malaysian",
+    img: "https://www.eatyourselfskinny.com/wp-content/uploads/2023/08/chicken-skewers-5-scaled.jpg"
    },
   { name: "Middle-Eastern",
-    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+    img: "https://png.pngtree.com/thumb_back/fw800/background/20250611/pngtree-falafel-wrap-with-crispy-balls-hummus-and-veggies-in-pita-bread-image_17414907.jpg"
    },
   { name: "Thai",
-    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+    img: "https://therecipecritic.com/wp-content/uploads/2023/12/sticky_mango_rice-1025x1536.jpg"
    },
   { name: "Mexican",
-    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+    img: "https://betterhomebase.com/wp-content/uploads/2025/04/Chicken-Street-Tacos.webp"
    },
   { name: "Mediterranean",
-    img: "https://flavornest.net/wp-content/uploads/2025/05/Fragrant-Chicken-Biryani-768x768.webp"
+    img: "https://hips.hearstapps.com/hmg-prod/images/greek-salad-lead-642f29241cceb.jpg"
    }
 ]
 
