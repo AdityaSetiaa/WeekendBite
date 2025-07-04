@@ -1,6 +1,21 @@
 @import "tailwindcss";
 
-.favicon {
-  width: 16px;
-  height: 16px;
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #e2e8f0; 
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #f27979; 
+  border-radius: 8px;
+}
+
+.scrollbar2::-webkit-scrollbar {
+  height: 0px;
+}
+
+.scrollbar2::-webkit-scrollbar-thumb {
+  background: #f27979;
+  border-radius: 8px;
 }
