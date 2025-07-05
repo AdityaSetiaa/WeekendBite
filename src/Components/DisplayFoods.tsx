@@ -4,32 +4,34 @@ import { useState } from "react"
 
 
 function DisplayFoods() {
-  const [tag, setTag] = useState<string[]>([""]);
-  tag.slice(0,2)
+  const [tag, setTag] = useState<string[]>([]);
+  
   console.log(tag);
   const handleTagClick = (selectedTag: string) => {
-    setTag(prev =>
-      prev.includes(selectedTag)
-        ? prev.filter(tagItem => tagItem !== selectedTag)
-        : [selectedTag]
-    );
+  setTag(prev =>
+    prev.includes(selectedTag)
+      ? prev.filter(t => t !== selectedTag)  // remove if exists
+      : [selectedTag]               // add if not exists
+  );
+};
+  // const handleTagClick1 = (selectedTag: string) => {
+  //   setTag(prev =>
+  //     prev.includes(selectedTag)
+  //       ? prev.filter(tagItem => tagItem !== selectedTag)
+  //       : [selectedTag]
+  //   );
     
-  };
-  const handleTagClick1 = (selectedTag: string) => {
-    setTag(prev =>
-      prev.includes(selectedTag)
-        ? prev.filter(tagItem => tagItem !== selectedTag)
-        : [selectedTag]
-    );
-    
-  }
-  const filterTags = tag.length === 0 || tag[0] === ""
-    ? regions.regions
-    : regions.regions.filter((region: any) => tag.includes(region.name));
-  // Move filteredFoods declaration above return
-  const filteredFoods = tag.length === 0 || tag[0] === ""
-    ? foods.foods
-    : foods.foods.filter((food: any) => tag.includes(food.region));
+  // }
+
+  // const [selected, setselected] = useState("all")
+
+  const filteredFoods = tag.length === 0
+  ? foods.foods
+  : foods.foods.filter(food => tag.some(t => t && food.Tags.includes(t)))
+
+  
+
+  
 
   return (
   <>
@@ -55,7 +57,7 @@ function DisplayFoods() {
       </div>
       <div className='w-full h-10 flex flex-row items-center overflow-scroll whitespace-nowrap gap-4 scroller-hide justify-center scrollbar2'>
         {
-          regions.filterTags.map((tags: any, index: number) => (
+          foods.filterTags.map((tags: any, index: number) => (
             <div key={index} className='flex 
                                         flex-row
                                         w-auto
@@ -69,7 +71,7 @@ function DisplayFoods() {
               
               |<span className={`w-auto rounded-2xl p-2 hover:text-red-400 ${
         tag.includes(tags) ? " text-red-400" : ""
-      }`} onClick={()=> handleTagClick1(tags)}>{tags}</span> | 
+      }`} onClick={()=> handleTagClick(tags)}>{tags}</span> | 
             </div>
           ))
         }
@@ -77,8 +79,8 @@ function DisplayFoods() {
   </div>
     <div className="w-auto h-auto bg-gray-100 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5  items-center justify-center py-10">
     
-      {
-         (tag.length === 0 || tag[0] === "") ? filteredFoods.map((food: any) =>(
+      { 
+       filteredFoods.map((food: any) =>(
             <div key={food.id} className='flex flex-col items-center justify-center w-auto h-full bg-gray-100 transition-transform duration-300 ease-in-out cursor-pointer '>
                 <div className='flex flex-col items-center justify-center w-full mt-4 h-full hover:text-red-400 duration-200'>
                     <img src={food.image} alt={food.name} className="w-68 h-68 object-cover rounded-md " />
@@ -91,22 +93,11 @@ function DisplayFoods() {
                     ))}</span>
                 </div>
                 
-            </div>
-        )) : foods.foods
-          .map((food: any) =>(
-            <div key={food.id} className='flex flex-col items-center justify-center w-auto h-full bg-gray-100 transition-transform duration-300 ease-in-out cursor-pointer '>
-                <div className='flex flex-col items-center justify-center w-full mt-4 h-full hover:text-red-400 duration-200'>
-                    <img src={food.image} alt={food.name} className="w-68 h-68 object-cover rounded-md " />
-                    <h1 className=' text-lg mt-2 text-center '>{food.name}</h1>
-                    <span>{food.Credits.map((credit: any, index: number) => (
-                        <span key={index}>
-                            <a href={credit.link} className='hover:text-red-400'>by {credit.name}</a>
-                            {index < food.Credits.length - 1 && ', '}
-                        </span>
-                    ))}</span>
-                </div>
-            </div>
-        ))
+            </div> 
+        ))  
+       
+       
+
       } 
     </div>
   </>
