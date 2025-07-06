@@ -1107,7 +1107,7 @@ export const regions = [
   { name: "Chinese",
     img: "https://www.oliveandmango.com/images/uploads/2020_04_27_takeout_style_kung_pao_chicken_2.jpg"
    },
-  { name: "malaysian",
+  { name: "Malaysian",
     img: "https://www.eatyourselfskinny.com/wp-content/uploads/2023/08/chicken-skewers-5-scaled.jpg"
    },
   { name: "Middle-Eastern",
