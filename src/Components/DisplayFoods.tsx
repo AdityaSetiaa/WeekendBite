@@ -1,6 +1,10 @@
 import regions from "../store"
 import foods from "../store"
 import { useState } from "react"
+import weekendbites from "../store"
+
+ 
+
 
 
 function DisplayFoods() {
@@ -10,20 +14,11 @@ function DisplayFoods() {
   const handleTagClick = (selectedTag: string) => {
   setTag(prev =>
     prev.includes(selectedTag)
-      ? prev.filter(t => t !== selectedTag)  // remove if exists
-      : [selectedTag]               // add if not exists
+      ? prev.filter(t => t !== selectedTag) 
+      : [selectedTag]              
   );
 };
-  // const handleTagClick1 = (selectedTag: string) => {
-  //   setTag(prev =>
-  //     prev.includes(selectedTag)
-  //       ? prev.filter(tagItem => tagItem !== selectedTag)
-  //       : [selectedTag]
-  //   );
-    
-  // }
-
-  // const [selected, setselected] = useState("all")
+  
 
   const filteredFoods = tag.length === 0
   ? foods.foods
@@ -77,11 +72,14 @@ function DisplayFoods() {
         }
       </div>
   </div>
-    <div className="w-auto h-auto bg-gray-100 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5  items-center justify-center py-10">
+  <div className="p-4">
+    <img src={weekendbites.weekendbites} alt="" className=""/>
+  </div>
+    <div className="w-auto h-auto bg-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5  items-center justify-center py-10">
     
       { 
        filteredFoods.map((food: any) =>(
-            <div key={food.id} className='flex flex-col items-center justify-center w-auto h-full bg-gray-100 transition-transform duration-300 ease-in-out cursor-pointer '>
+            <div key={food.id} className='flex flex-col items-center justify-center w-auto h-full bg-white transition-transform duration-300 ease-in-out cursor-pointer '>
                 <div className='flex flex-col items-center justify-center w-full mt-4 h-full hover:text-red-400 duration-200'>
                     <img src={food.image} alt={food.name} className="w-68 h-68 object-cover rounded-md " />
                     <h1 className=' text-lg mt-2 text-center '>{food.name}</h1>
@@ -95,10 +93,7 @@ function DisplayFoods() {
                 
             </div> 
         ))  
-       
-       
-
-      } 
+    } 
     </div>
   </>
   )
