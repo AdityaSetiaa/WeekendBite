@@ -63,7 +63,7 @@ function RecipePage() {
               <div key={i} className="text-sm sm:text-base">
                 <a
                   href={credit.link}
-                  className="hover:text-red-400 transition-colors"
+                 
                 >
                   Recipe by -{" "}
                   <i className="hover:text-red-400">{credit.name}</i>
