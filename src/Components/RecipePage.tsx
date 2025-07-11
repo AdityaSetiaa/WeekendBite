@@ -1,5 +1,5 @@
 
-
+import { useParams } from 'react-router-dom'
 import { foods } from '../Foods/food'
 
 
@@ -8,8 +8,12 @@ function RecipePage() {
 
 
    
-    
-    const item = foods[1]
+    const { id } = useParams();
+    const item = foods.find(f => Number(id) === f.id );
+
+    if (!item) return <p>Item not found</p>;
+    console.log("ID from URL:", id);
+  console.log("Item found:", item);
     
     console.log(item)
   return (
@@ -17,7 +21,7 @@ function RecipePage() {
         <div className=' min-w-auto max-w-250 bg-gray-50 p-7 shadow-2xl rounded-3xl'>
         <div className='flex flex-wrap'> 
         <h1 className='text-3xl text-red-400 underline'>{item.name} </h1> <i className='justify-center'>  (in {item.Steps.length} steps)</i>
-        <div className='w-auto h-auto flex gap-10 mt-6'>
+        <div className='w-auto h-auto flex gap-10 m-10'>
             <div><img src={item.image} alt={item.name} className='max-w-100 rounded-2xl' />
 
             <h2 className='w-auto h-auto max-w-100 mt-5 bg-gray-100 p-4 rounded-3xl'>
@@ -25,7 +29,7 @@ function RecipePage() {
                 {item.description}
             </h2>
              </div>
-            <div className='bg-gray-00 p-7 bg-gray-100  rounded-3xl h-auto'>
+            <div className='bg-gray-00 p-7 bg-gray-100  rounded-3xl h-auto m-auto'>
                 <p className='text-2xl text-red-400 underline'>
                     Ingredients
                 </p>
