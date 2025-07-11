@@ -2,6 +2,7 @@ import regions from "../store"
 import foods from "../store"
 import { useState } from "react"
 import weekendbites from "../store"
+import { useNavigate } from "react-router-dom";
 
  
 
@@ -9,6 +10,8 @@ import weekendbites from "../store"
 
 function DisplayFoods() {
   const [tag, setTag] = useState<string[]>([]);
+  const navigate = useNavigate()
+  
   const handleTagClick = (selectedTag: string) => {
   setTag(prev =>
     prev.includes(selectedTag)
@@ -22,6 +25,7 @@ function DisplayFoods() {
   ? foods.foods
   : foods.foods.filter(food => tag.some(t => t && food.Tags.includes(t)))
 
+ 
   
 
   
@@ -73,13 +77,17 @@ function DisplayFoods() {
   <div className="p-4">
     <img src={weekendbites.weekendbites} alt="" className=""/>
   </div>
-    <div className="w-auto h-auto bg-white flex flex-wrap items-center justify-center py-10">
+    <div  className="w-auto h-auto bg-white flex flex-wrap items-center justify-center py-10">
     
       { 
        filteredFoods.map((food: any) =>(
+        
             <div key={food.id} className='flex flex-col items-center justify-center w-auto h-full bg-white transition-transform duration-300 ease-in-out cursor-pointer m-5 '>
-                <div className='flex flex-col items-center justify-center w-full mt-4 h-full hover:text-red-400 duration-200'>
+               
+                <div onClick={() => navigate(`/Recipe/${food.id}`)}className='flex flex-col items-center justify-center w-full mt-4 h-full hover:text-red-400 duration-200'>
+                  
                     <img src={food.image} alt={food.name} className="w-68 h-68 object-cover rounded-md " />
+                    
                     <h1 className=' text-lg mt-2 text-center '>{food.name}</h1>
                     <span>{food.Credits.map((credit: any, index: number) => (
                         <span key={index}>
@@ -89,10 +97,13 @@ function DisplayFoods() {
                     ))}</span>
                 </div>
                 
+                
             </div> 
+            
         ))  
     } 
     </div>
+    
   </>
   )
 }
