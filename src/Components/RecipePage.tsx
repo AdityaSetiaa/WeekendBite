@@ -12,10 +12,6 @@ function RecipePage() {
     const item = foods.find(f => Number(id) === f.id );
 
     if (!item) return <p>Item not found</p>;
-    console.log("ID from URL:", id);
-  console.log("Item found:", item);
-    
-    console.log(item)
   return (
     <div className='m-4 flex flex-wrap justify-center  items-center '>
         <div className=' min-w-auto max-w-250 bg-gray-50 p-7 shadow-2xl rounded-3xl'>
