@@ -9,8 +9,6 @@ import weekendbites from "../store"
 
 function DisplayFoods() {
   const [tag, setTag] = useState<string[]>([]);
-  
-  console.log(tag);
   const handleTagClick = (selectedTag: string) => {
   setTag(prev =>
     prev.includes(selectedTag)
